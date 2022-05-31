@@ -13,6 +13,11 @@ body {
     color: whitesmoke;
 }
 
+.skills {
+    background-color: whitesmoke;
+
+}
+
 /*Controls background colours of nav links*/
 #nav .list-inline-item:nth-child(1) {
     background-color: midnightblue;
@@ -44,6 +49,26 @@ h1, h2, h3, h4 {
 
 .inline-block {
     display: inline;
+}
+
+.row-table {
+    display: table;
+}
+
+.section-column {
+    display: table-cell;
+    padding: 0 30px 30px;
+    float: none;
+}
+
+
+/*section-column is a child of row-table. The display rules ensure that the columns created are of equal height, regardless of content*/
+
+.section-heading {
+    font-family: 'Exo', sans-serif;
+    font-weight: 300;
+    margin: 25px 0 40px 0;
+
 }
 
 /*Heading*/
@@ -197,3 +222,15 @@ footer {
 }
 /*the :before pseudo element selector is used here because it is what controls the transform colour*/
 /*Applies a slightly dark filter*/
+
+/*3 reasons*/
+
+.three-reasons-icon {
+    font-size: 30px;
+    color: midnightblue;
+}
+
+.three-reasons-heading {
+    margin-bottom: 15px;
+
+}
