@@ -26,6 +26,10 @@ body {
     background-color: #9b0d00;
 }
 
+.contact {
+    background-color: white;
+}
+
 /*Controls background colours of nav links*/
 #nav .list-inline-item:nth-child(1) {
     background-color: midnightblue;
@@ -352,3 +356,35 @@ The :after pseudo element creates the circular node on the timeline
     margin-bottom: 30px;
 }
 
+/*Contact page*/
+
+.contact-heading {
+    font-family: 'Exo', sans-serif;
+    font-weight: 300;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    background-color: rgb(48, 103, 92);
+}
+
+.center-form {
+    padding-top: 30px;
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+/*Media Queries*/
+
+@media screen and (min-width: 992px) {
+    .center-form {
+        padding-top: 30px;
+        min-height: 250px;
+        margin: 0 auto;
+        max-width: 50%;
+    }
+}
