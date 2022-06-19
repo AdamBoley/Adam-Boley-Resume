@@ -44,6 +44,14 @@ body {
 }
 
 #nav .list-inline-item:nth-child(4) {
+    background-color: #003b8d;
+}
+
+#nav .list-inline-item:nth-child(5) {
+    background-color: rgb(25, 95, 25);
+}
+
+#nav .list-inline-item:nth-child(6) {
     background-color: rgb(66, 0, 66);
 }
 
