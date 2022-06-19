@@ -8,26 +8,29 @@ body {
 }
 /*Colours*/
 
-.header-background {
+.background-color-header {
     background-color: #676767;
     color: whitesmoke;
 }
 
-.skills {
+.background-color-skills {
     background-color: whitesmoke;
-
 }
 
-.personal-info {
+.background-color-personal-info {
     background-color: #f4f4f4;
 }
 
-.work-history {
+.background-color-work-history {
     background-color: #9b0d00;
 }
 
-.contact {
+.background-color-contact {
     background-color: white;
+}
+
+.background-color-three-reasons {
+    background-color: #ffffff;
 }
 
 /*Controls background colours of nav links*/
@@ -83,8 +86,7 @@ h1, h2, h3, h4 {
 
 
 /*section-column is a child of row-table. The display rules ensure that the columns created are of equal height, regardless of content*/
-.work-history-heading
-.section-heading {
+.work-history-heading, .section-heading {
     font-family: 'Exo', sans-serif;
     font-weight: 300;
     margin: 25px 0 40px 0;
