@@ -106,3 +106,9 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+
+
+Google Maps API key - AIzaSyBV8-KBPm3paH-kZ_NQeQz1SNsIRppuxhU
+Need to limit the API key - https://developers.google.com/maps/documentation/javascript/get-api-key
+

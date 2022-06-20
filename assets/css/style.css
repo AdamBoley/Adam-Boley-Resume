@@ -33,6 +33,10 @@ body {
     background-color: #ffffff;
 }
 
+.background-color-conferences {
+    background-color: #f4f4f4;
+}
+
 /*Controls background colours of nav links*/
 #nav .list-inline-item:nth-child(1) {
     background-color: midnightblue;
@@ -386,6 +390,14 @@ button[type="submit"] {
     padding-top: 30px;
     margin: 0 auto;
     max-width: 70%;
+}
+
+/*Interests page*/
+
+/*Interests page - Google Map:*/
+
+#map {
+    min-height: 360px;
 }
 
 /*Media Queries*/

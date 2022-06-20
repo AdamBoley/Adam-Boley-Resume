@@ -161,8 +161,15 @@
             </div>
         </div>
     </footer>
-
-
+    <script src="assets/js/maps.js"></script>
+    <script> 
+        var APIKey = 'AIzaSyBV8-KBPm3paH-kZ_NQeQz1SNsIRppuxhU' 
+    </script>
+    <!--This script element holds the API key as a variable, but since it is included in the script element below, it is technically unnecessary-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
+    <!--This is the actual Google Maps API-->
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+    <!--This is the marker clusterer.js file. This allows clusters of markers to be added to a map-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
