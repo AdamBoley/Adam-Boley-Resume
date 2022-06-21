@@ -82,6 +82,14 @@ function fetchGitHubInformation(event) {
                 if (errorResponse.status === 404) { //triggers if the status code is 404, page not found
                     $('#gh-user-data').html(`<h2>No information found for user ${username}</h2>`)
                 }
+                else if (errorResponse.status === 403) { //triggers if status code is 403, forbidden
+                    var resetTime = new Date(errorResponse.getResponseHeader('X-RateLimit-Reset')*1000)
+                    //part of the error response object is the time when the API will become available for use again after a bad request
+                    //This is the code above, and the time is UNIX timestamp, which must be multiplied by 1000 for use
+                    //Note: This basically only happens when a user types really really fast
+                    $('#gh-user-data').html(`<h4>Too many requests, please wait until ${resetTime.toLocaleTimeString()}</h4>`)
+                    //This inserts the time when the API will become available for use again, in a human-readable time format that is localised to the user's location
+                }
                 else {
                     console.log(errorResponse) //triggers if another error code is returned
                     $('#gh-user-data').html(
