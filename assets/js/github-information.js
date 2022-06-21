@@ -49,6 +49,9 @@ function repoInformationHTML(repos) {
 
 
 function fetchGitHubInformation(event) {
+    $('#gh-user-data').html('') //sets user data to an empty string, so that user profile data does not linger when the input box is empty
+    $('#gh-repo-data').html('') //the same as above
+
     var username = $('#gh-username').val() //uses jQuery to grab the value of the username
 
     if (!username) { //checks to see if the input is empty, and if so, displays the h2 text
@@ -87,4 +90,7 @@ function fetchGitHubInformation(event) {
             }
         )
 }
+
+$(document).ready(fetchGitHubInformation); //executes fetchGitHubInformation function when the DOM is fully loaded
+//Uses the default value of Octocat, which is GitHub's profile, so that a user is loaded immediately
 
