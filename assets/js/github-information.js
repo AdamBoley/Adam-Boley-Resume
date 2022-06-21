@@ -20,6 +20,34 @@ function userInformationHTML(user) {
 //user.following is a numerical count of the number of people the user is following
 //user.public_repos is a count of the number of public repositories the user has
 
+function repoInformationHTML(repos) {
+    //repo data is returned as an array, so standard array indexing will work
+    //the array is an array of repo names
+    //repos is the repoData parameter passed in by the function call
+    if (repos.length == 0) {
+        return `<div class="clearfix repo-list">This user has no public repositories</div>`
+    }
+
+    var listItemsHTML = repos.map(function(repo) {//the map method works like a forEach , but instead returns an array
+        return `
+        <li>
+            <a href="${repo.html_url} target="_blank"">${repo.name}</a>
+        </li>`
+        //repo here is the singular variable of the repos parameter
+    })
+
+    return `
+    <div class="clearfix repo-list">
+        <p><strong>Repository list </strong></p>
+        <ul>
+            ${listItemsHTML.join('\n')}
+        </ul>
+    </div>`
+    //uses the join method with a new line command to create a list of repositories of that user
+    //This is a way of dynamically inserting list items
+}
+
+
 function fetchGitHubInformation(event) {
     var username = $('#gh-username').val() //uses jQuery to grab the value of the username
 
@@ -36,11 +64,16 @@ function fetchGitHubInformation(event) {
     )//the gif is currently inoperative
 
     $.when( //a jQuery promise
-        $.getJSON(`https://api.github.com/users/${username}`//this is the URL of the Github API
+        $.getJSON(`https://api.github.com/users/${username}`),//this is the URL of the Github API, which is a list of users
+        $.getJSON(`https://api.github.com/users/${username}/repos`) //this is a list of a selected user's repositories
         ).then( //what happens when a promise is fulfilled
-            function(response) {
-                var userData = response;
-                $('#gh-user-data').html(userInformationHTML(userData))
+            function(firstResponse, secondResponse) {
+                var userData = firstResponse[0]; 
+                var repoData = secondResponse[0]
+                //array indexing is necessary here because when two calls are made, the when() method packs up the 
+                //responses into arrays. Each response is the first element of the arrays
+                $('#gh-user-data').html(userInformationHTML(userData)) //function to be called in response to the first call
+                $('#gh-repo-data').html(repoInformationHTML(repoData)) //function to be called in response to the second call
             }, 
             function(errorResponse) { //triggers if a error status code is returned
                 if (errorResponse.status === 404) { //triggers if the status code is 404, page not found
@@ -53,6 +86,5 @@ function fetchGitHubInformation(event) {
                 }
             }
         )
-    )
 }
 
