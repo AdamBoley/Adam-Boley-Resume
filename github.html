@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/github-styles.css">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+    <script src="assets/js/github-information.js"></script>
     <title>Adam's Resume</title>
 </head>
 <body>
@@ -59,8 +65,9 @@
 
                 <div class="center-form">
                     <input type="text" id="gh-username" value="octocat" oninput="fetchGitHubInformation()" />
-                    <div id="gh-user-data"></div>
-                    <div id="gh-repo-data"></div>
+                    <!--The oninput event is fired each time the user types into the text box-->
+                    <div id="gh-user-data"></div><!--Holds user data that is fetched from Github-->
+                    <div id="gh-repo-data"></div><!--Holds repository data that is fetched from github-->
 
                 </div>
 
