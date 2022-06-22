@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Adam's Resume</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("WLd2lgI98h1EysCD6"); //This is the public key, much like an API key
+            //emailjs.send('Gmail', 'template_qyu38io', {name: 'Kane', notes: 'Check this out!'}); //this contains the parameters of the email - the service, the email template to be used and the content
+        })();
+    </script>
 </head>
 <body>
     <header>
@@ -53,13 +62,13 @@
     <article class="container-fluid">
         <div class="row background-color-contact">
             <div class="col-12">
-                <h3 class="contact-heading text-center">Got a project in mind?</h3>
+                <h3 class="contact-heading text-center">Want to contact me, perhaps you have a project in mind?</h3>
                 <h5 class="text-center">Let's work together!</h5>
                 <div class="center-form">
-                    <form action="">
+                    <form onsubmit="return sendMail(this)"><!--'this' refers to this form's content, also method="POST" is not necessary-->
                         <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required/>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Email" required/>
-                        <textarea name="project-summary" id="project-summary" cols="30" rows="5" class="form-control" placeholder="Project description" required></textarea>
+                        <input type="email" name="emailaddress" id="email" class="form-control" placeholder="Email" required/>
+                        <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="message" required></textarea>
                         <div class="form-row text text-center">
                             <div class="col">
                                 <button class="btn btn-secondary" type="submit">Send collaboration request</button>
@@ -104,7 +113,7 @@
         </div>
     </footer>
 
-
+    <script src="assets/js/send-email.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
